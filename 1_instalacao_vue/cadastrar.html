@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Seu CSS personalizado -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+
+    <!-- Bootstrap JS (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Seu JS personalizado -->
+    <script src="src/validate.js" defer></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="left-side">
+            <img src="_img/ST.png"/>
+            <img src="_img/circulos.png" alt="Circles" class="corner-img">
+        </div>
+        <div class="right-side">
+            <div class="login-box">
+                <h2>Cadastrar</h2>
+                <form id="registration-form">
+                    <input type="text" id="nome" placeholder="Nome completo" required>
+                    <input type="text" id="instituicao" placeholder="Instituição de ensino" required>
+                    <input type="text" id="cep" placeholder="CEP" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="email" id="confirm-email" placeholder="Confirmar email" required>
+                    <input type="password" id="senha" placeholder="Senha" required>
+                    <input type="password" id="confirm-senha" placeholder="Confirmar senha" required>
+                    <button type="submit">Cadastrar</button>
+                    <div id="feedback" class="mt-2"></div>
+                </form>
+                <div class="text-center mt-3">
+                    <p class="mb-0">Já tem uma conta? <a href="Loginpage.html" class="btn btn-link">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

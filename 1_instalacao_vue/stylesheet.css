@@ -76,6 +76,16 @@ body, html {
     background-color: rgb(11, 55, 135);
 }
 
+/* Estilo do link "Crie uma" */
+.login-box .btn-link {
+    color: rgb(8, 91, 143);
+    text-decoration: none;
+}
+
+.login-box .btn-link:hover {
+    text-decoration: underline;
+}
+
 /* Imagem no canto */
 .corner-img {
     position: absolute;
