@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Declara que o documento está usando HTML5 -->
     <meta charset="UTF-8">
+    
+    <!-- Define o comportamento da página em dispositivos móveis, garantindo responsividade -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título da página, que aparece na aba do navegador -->
     <title>Tela de Login</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Inclusão do CSS do Bootstrap para estilização e layout responsivo -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Seu CSS personalizado -->
+    <!-- Inclusão de um arquivo CSS personalizado para adicionar estilizações próprias -->
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
 
-    <!-- Vue.js -->
+    <!-- Inclusão do Vue.js para a interatividade dinâmica da página -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <!-- Inclusão do Vue Router para gerenciar rotas dentro da aplicação (neste caso não utilizado ainda) -->
     <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
 
-    <!-- Bootstrap JS (opcional) -->
+    <!-- Inclusão opcional do JS do Bootstrap para componentes interativos como modais e carrosséis -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
+    <!-- Inclusão do script personalizado `app.js` que conterá a lógica do Vue.js -->
     <script src="src/app.js" defer></script>
 </head>
 <body>
+    <!-- O Vue.js vai controlar tudo dentro deste elemento com o ID "app" -->
     <div id="app">
+        
+        <!-- Container principal da tela de login, utilizando flexbox para a estrutura em duas colunas -->
         <div class="login-container">
+            
+            <!-- Lado esquerdo da tela com imagens -->
             <div class="left-side">
+                <!-- Imagem principal do lado esquerdo (logotipo ou decoração) -->
                 <img src="_img/ST.png"/>
+                
+                <!-- Imagem decorativa (circulos) posicionada no canto da tela -->
                 <img src="_img/circulos.png" alt="Circles" class="corner-img">
             </div>
+            
+            <!-- Lado direito da tela, onde está o formulário de login -->
             <div class="right-side">
+                <!-- Caixa de login que contém os inputs e o botão -->
                 <div class="login-box">
+                    <!-- Título da caixa de login -->
                     <h2>Bem-vindo!</h2>
+                    
+                    <!-- Input para o campo de usuário, vinculado ao modelo Vue com v-model -->
                     <input type="text" placeholder="Usuário" v-model="usuario">
+                    
+                    <!-- Input para o campo de senha, também vinculado ao modelo Vue -->
                     <input type="password" placeholder="Senha" v-model="password">
+                    
+                    <!-- Botão de login com um evento click associado ao método "login" definido no Vue.js -->
                     <button @click="login">Login</button>
+                    
+                    <!-- Texto de navegação para a página de cadastro, exibido centralizado abaixo do botão de login -->
                     <div class="text-center mt-3">
+                        <!-- Texto com link para a página de cadastro -->
                         <p class="mb-0">Não tem uma conta? <a href="cadastrar.html" class="btn btn-link">Crie uma</a></p>
                     </div>
                 </div>

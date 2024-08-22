@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatar Problema</title>
+
+    <!-- Inclusão do CSS do Bootstrap para estilização responsiva e pré-definida -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Inclusão do CSS personalizado -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+
+    <!-- Inclusão do JS do Bootstrap, opcional para funcionalidades como dropdowns e modais -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Inclusão do SweetAlert2 para alertas bonitos -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- Container principal que envolve toda a página de relatar problema -->
+    <div class="login-container">
+        <!-- Lado esquerdo com as imagens e background -->
+        <div class="left-side">
+            <!-- Logotipo da empresa ou sistema -->
+            <img src="_img/ST.png" alt="Logotipo" />
+            <!-- Imagem decorativa no canto da página -->
+            <img src="_img/circulos.png" alt="Circles" class="corner-img">
+        </div>
+
+        <!-- Lado direito que contém o formulário de relatar problema -->
+        <div class="right-side">
+            <div class="login-box">
+                <!-- Título da página de relatar problema -->
+                <h2>Informe seu problema</h2>
+
+                <!-- Formulário para relatar um problema -->
+                <form id="report-problem-form">
+                    <!-- Campo para o Bloco da sala -->
+                    <input type="text" id="bloco" placeholder="Bloco da sala*" required>
+                    <!-- Campo para o Número da sala -->
+                    <input type="text" id="numero-sala" placeholder="Número da sala*" required>
+                    <!-- Campo para o Código da máquina -->
+                    <input type="text" id="codigo-maquina" placeholder="Código da máquina*" required>
+                    <!-- Campo para relatar o problema -->
+                    <textarea id="relatar-problema" placeholder="Relatar problema*" rows="4" required></textarea>
+                    
+                    <!-- Botão para enviar o relatório -->
+                    <button type="submit">Relatar Problema</button>
+                    
+                    <!-- Área para exibir mensagens de feedback (erros de validação, etc.) -->
+                    <div id="feedback" class="mt-2"></div>
+                </form>
+
+                <!-- Link para redirecionar o usuário de volta à página inicial ou outra página -->
+                <div class="text-center mt-3">
+                    <p class="mb-0">
+                        <a href="Loginpage.html" class="btn btn-link">Voltar à página inicial</a> <!-- Link para voltar à página inicial -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para processar o formulário e mostrar SweetAlert2 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Seleciona o formulário e adiciona um evento de submit
+            document.getElementById('report-problem-form').addEventListener('submit', async function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+
+                // Coleta os valores dos campos do formulário
+                const bloco = document.getElementById('bloco').value;
+                const numeroSala = document.getElementById('numero-sala').value;
+                const codigoMaquina = document.getElementById('codigo-maquina').value;
+                const relatarProblema = document.getElementById('relatar-problema').value;
+
+                // Substitua esta URL pela URL da sua API para salvar o problema no banco de dados
+                const apiUrl = 'http://localhost:3000/report-problem'; 
+
+                try {
+                    // Faz uma requisição POST ao servidor com os dados do problema
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            bloco: bloco,
+                            numeroSala: numeroSala,
+                            codigoMaquina: codigoMaquina,
+                            relatarProblema: relatarProblema
+                        })
+                    });
+
+                    // Verifica se a resposta foi bem-sucedida
+                    if (response.ok) {
+                        // Exibe um alerta de sucesso com SweetAlert2
+                        Swal.fire({
+                            title: 'Ótimo trabalho!',
+                            text: 'Seu problema foi relatado com sucesso!',
+                            icon: 'success'
+                        });
+
+                        // Opcional: Limpa o formulário
+                        document.getElementById('report-problem-form').reset();
+                    } else {
+                        // Exibe um alerta de erro com SweetAlert2
+                        Swal.fire({
+                            title: 'Erro!',
+                            text: 'Houve um problema ao relatar o seu problema. Tente novamente mais tarde.',
+                            icon: 'error'
+                        });
+                    }
+                } catch (error) {
+                    // Exibe um alerta de erro com SweetAlert2 em caso de falha na conexão
+                    Swal.fire({
+                        title: 'Erro!',
+                        text: 'Erro ao conectar ao servidor: ' + error.message,
+                        icon: 'error'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

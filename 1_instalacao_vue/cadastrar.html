@@ -5,40 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Inclusão do CSS do Bootstrap para estilização responsiva e pré-definida -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Seu CSS personalizado -->
+    <!-- Inclusão do CSS personalizado -->
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
 
-    <!-- Bootstrap JS (opcional) -->
+    <!-- Inclusão do JS do Bootstrap, opcional para funcionalidades como dropdowns e modais -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    <!-- Seu JS personalizado -->
+    <!-- Inclusão do arquivo JS personalizado para validações e interações -->
     <script src="src/validate.js" defer></script>
 </head>
 <body>
+    <!-- Container principal que envolve toda a página de cadastro -->
     <div class="login-container">
+        <!-- Lado esquerdo com as imagens e background -->
         <div class="left-side">
+            <!-- Logotipo da empresa ou sistema -->
             <img src="_img/ST.png"/>
+            <!-- Imagem decorativa no canto da página -->
             <img src="_img/circulos.png" alt="Circles" class="corner-img">
         </div>
+
+        <!-- Lado direito que contém o formulário de cadastro -->
         <div class="right-side">
             <div class="login-box">
+                <!-- Título da página de cadastro -->
                 <h2>Cadastrar</h2>
+
+                <!-- Formulário de cadastro com campos para as informações do usuário -->
                 <form id="registration-form">
+                    <!-- Campo para o nome completo -->
                     <input type="text" id="nome" placeholder="Nome completo" required>
+                    <!-- Campo para a instituição de ensino -->
                     <input type="text" id="instituicao" placeholder="Instituição de ensino" required>
+                    <!-- Campo para o CEP (será utilizado uma API de CEP) -->
                     <input type="text" id="cep" placeholder="CEP" required>
+                    <!-- Campo para o email -->
                     <input type="email" id="email" placeholder="Email" required>
+                    <!-- Campo para confirmar o email -->
                     <input type="email" id="confirm-email" placeholder="Confirmar email" required>
+                    <!-- Campo para a senha -->
                     <input type="password" id="senha" placeholder="Senha" required>
+                    <!-- Campo para confirmar a senha -->
                     <input type="password" id="confirm-senha" placeholder="Confirmar senha" required>
+                    
+                    <!-- Botão de cadastro -->
                     <button type="submit">Cadastrar</button>
+
+                    <!-- Área para exibir mensagens de feedback (erros de validação, etc.) -->
                     <div id="feedback" class="mt-2"></div>
                 </form>
+
+                <!-- Link para redirecionar o usuário para a página de login caso já tenha uma conta -->
                 <div class="text-center mt-3">
-                    <p class="mb-0">Já tem uma conta? <a href="Loginpage.html" class="btn btn-link">Login</a></p>
+                    <p class="mb-0">Já tem uma conta? 
+                        <a href="Loginpage.html" class="btn btn-link">Login</a> <!-- Link para a página de login -->
+                    </p>
                 </div>
             </div>
         </div>
