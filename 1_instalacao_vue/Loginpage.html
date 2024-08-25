@@ -43,30 +43,41 @@
                 <!-- Imagem decorativa (circulos) posicionada no canto da tela -->
                 <img src="_img/circulos.png" alt="Circles" class="corner-img">
             </div>
-            
-            <!-- Lado direito da tela, onde está o formulário de login -->
-            <div class="right-side">
-                <!-- Caixa de login que contém os inputs e o botão -->
-                <div class="login-box">
-                    <!-- Título da caixa de login -->
-                    <h2>Bem-vindo!</h2>
-                    
-                    <!-- Input para o campo de usuário, vinculado ao modelo Vue com v-model -->
-                    <input type="text" placeholder="Usuário" v-model="usuario">
-                    
-                    <!-- Input para o campo de senha, também vinculado ao modelo Vue -->
-                    <input type="password" placeholder="Senha" v-model="password">
-                    
-                    <!-- Botão de login com um evento click associado ao método "login" definido no Vue.js -->
-                    <button @click="login">Login</button>
-                    
-                    <!-- Texto de navegação para a página de cadastro, exibido centralizado abaixo do botão de login -->
-                    <div class="text-center mt-3">
-                        <!-- Texto com link para a página de cadastro -->
-                        <p class="mb-0">Não tem uma conta? <a href="cadastrar.html" class="btn btn-link">Crie uma</a></p>
-                    </div>
-                </div>
-            </div>
+ <!-- Lado direito da tela, onde está o formulário de login -->
+<div class="right-side">
+    <!-- Caixa de login que contém os inputs e o botão -->
+    <div class="login-box">
+        <!-- Título da caixa de login -->
+        <h2>Bem-vindo!</h2>
+
+        <!-- Input para o campo de usuário, vinculado ao modelo Vue com v-model -->
+        <input type="text" placeholder="Usuário" v-model="usuario">
+
+        <!-- Input para o campo de senha, também vinculado ao modelo Vue -->
+        <input type="password" placeholder="Senha" v-model="password">
+
+        <!-- Botão de login com um evento click associado ao método "login" definido no Vue.js -->
+        <button @click="login">Login</button>
+
+        <!-- Texto de navegação para a página de cadastro, exibido centralizado abaixo do botão de login -->
+        <div class="text-center mt-3">
+            <!-- Texto com link para a página de cadastro -->
+            <p class="mb-0">Não tem uma conta? <a href="cadastrar.html" class="btn btn-link">Crie uma</a></p>
+        </div>
+    </div>
+
+    <!-- Container para as bolhas -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+</div>
+
+
+           
         </div>
     </div>
 </body>
