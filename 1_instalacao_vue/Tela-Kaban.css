@@ -10,12 +10,38 @@ body, html {
 /* Cabeçalho */
 header {
     width: 100%;
+    background: #0575E6;
+    display: flex;
+    align-items: center; /* Alinha a imagem e o texto verticalmente */
+    padding: 10px; /* Adiciona algum espaço interno */
+    box-sizing: border-box; /* Inclui o padding e border na largura e altura */
+}
+
+/* Contêiner para a imagem e o texto */
+.header-content {
+    display: flex;
+    align-items: center; /* Alinha a imagem e o texto verticalmente no centro */
+}
+
+/* Ajuste da imagem no cabeçalho */
+.imagem-ajustada {
+    width: 90px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-right: 10px; /* Espaço entre a imagem e o texto */
+}
+
+/* Estilo do título no cabeçalho */
+header h1 {
+    color: white; /* Define a cor do texto */
+    margin: 0; /* Remove a margem padrão */
+    font-size: 1.5rem; /* Ajuste o tamanho da fonte conforme necessário */
 }
 
 /* Sidebar (Dashboard) */
 .sidebar {
     width: 250px;
     min-height: 100vh;
+    background: linear-gradient(to bottom, #0575E6, #02298A, #021B79);
 }
 
 /* Kanban Board */
